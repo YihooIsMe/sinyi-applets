@@ -1,0 +1,74 @@
+/**index.wxss**/
+.imgSize{
+  width: 100%;
+  vertical-align: middle;
+}
+.containerList{
+  width: 100%;
+  padding:5px 0px;
+  display: flex;
+  border-bottom:1px solid #ddd;
+  box-sizing: border-box;
+}
+.containerList .img{
+  flex:0 0 32%;
+  height:100%;
+}
+.containerList .description{
+  box-sizing: border-box;
+  flex:0 0 68%;
+  padding:0 0 0 5px;
+}
+.caseName{
+  font-size:33rpx;
+}
+.right2,.right3,.right4{
+  display: flex;
+}
+.right3{
+  font-size:28rpx;
+}
+.right4{
+  font-size:33rpx;
+}
+.orderNo{
+  flex:0 0 70%;
+  font-size:30rpx;
+}
+.orderAmount{
+  flex:0 0 30%;
+  font-size:33rpx;
+  text-align: right;
+  color:#D51B20;
+}
+.roomType{
+  flex:0 0 28%;
+}
+.buildingArea{
+  flex:0 0 25%;
+  text-align: center;
+}
+.orientation{
+  flex:0 0 13%;
+  text-align: center;
+}
+.agentPrice{
+  flex:0 0 34%;
+  text-align:right;
+}
+.right4 view{
+  margin-right: 10px;
+  border:1px solid transparent;
+  border-radius: 3px;
+  padding:0 5px;
+  font-size:29rpx;
+}
+.objectStatusName{
+  border-color:#D51B20 !important;
+}
+.liveTypeName,.isNew{
+  border-color:#009a44 !important;
+}
+.description>view{
+  margin-bottom:2px;
+}

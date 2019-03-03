@@ -1,0 +1,7 @@
+/**app.wxss**/
+@import "/wxParse/wxParse.wxss";
+.container {
+  height: 100%;
+  box-sizing: border-box;
+   padding:5px;
+} 

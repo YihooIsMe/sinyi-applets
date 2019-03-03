@@ -1,0 +1,15 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/roomDetails/roomDetails",
+    "pages/logs/logs",
+    "pages/shareRoomDetails/shareRoomDetails"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#009a44",
+    "navigationBarTitleText": "全公司买卖",
+    "navigationBarTextStyle":"white"
+  }
+}

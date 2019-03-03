@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+  <block wx:for="{{dataSource}}" wx:key="{{item.ID}}">
+    <view wx:if="{{item.ImageUrl ===''}}" class="containerList" bindtap='showRoomDetails' data-orderno="{{item.OrderNo}}" data-casename="{{item.CaseName}}">
+      <view class="img">
+        <image src="../../images/NoImage.gif" class="imgSize" mode='widthFix'></image>
+      </view>
+      <view class="description">
+        <view class="caseName">{{item.CaseName}}</view>
+        <view class="right2">
+          <view class="orderNo">物件编号 {{item.OrderNo}}</view>
+          <view class="orderAmount">{{item.OrderAmount}}万元</view>
+        </view>
+        <view class="right3">
+          <view class="roomType">{{item.Room}}室{{item.Sitting_Room}}厅{{item.Bathroom}}卫</view>
+          <view class="buildingArea">{{item.BuildingArea}}㎡</view>
+          <view class="orientation">{{item.MasterRoom_Orientation}}</view>
+          <view class="agentPrice">
+            {{item.AgentPriceDay}}万元/㎡
+          </view>
+        </view>
+        <view class="right4">
+          <view class="objectStatusName" wx:if="{{item.ObjectStatusName}}">{{item.ObjectStatusName}}</view>
+          <view class="liveTypeName" wx:if="{{item.LiveTypeName}}">{{item.LiveTypeName}}</view>
+          <view class="isNew" wx:if="{{item.IsNew}}">{{item.IsNew}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="containerList" bindtap='showRoomDetails' data-orderno="{{item.OrderNo}}">
+      <view class="img">
+        <image src='{{item.ImageUrl}}' class="imgSize" mode='widthFix'></image>
+      </view>
+      <view class="description">
+        <view class="caseName">{{item.CaseName}}</view>
+        <view class="right2">
+          <view class="orderNo">物件编号 {{item.OrderNo}}</view>
+          <view class="orderAmount">{{item.OrderAmount}}万元</view>
+        </view>
+        <view class="right3">
+          <view class="roomType">{{item.Room}}室{{item.Sitting_Room}}厅{{item.Bathroom}}卫</view>
+          <view class="buildingArea">{{item.BuildingArea}}㎡</view>
+          <view class="orientation">{{item.MasterRoom_Orientation}}</view>
+          <view class="agentPrice">
+            {{item.AgentPriceDay}}万元/㎡
+          </view>
+        </view>
+        <view class="right4">
+          <view class="objectStatusName" wx:if="{{item.ObjectStatusName}}">{{item.ObjectStatusName}}</view>
+          <view class="liveTypeName" wx:if="{{item.LiveTypeName}}">{{item.LiveTypeName}}</view>
+          <view class="isNew" wx:if="{{item.IsNew}}">{{item.IsNew}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

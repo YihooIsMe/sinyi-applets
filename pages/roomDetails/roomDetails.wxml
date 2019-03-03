@@ -1,0 +1,86 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view>
+  <block wx:if="{{swiperImgUrl.length}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:{{swiperHeight}}px'>
+      <block wx:for="{{swiperImgUrl}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src='{{item}}' class="swiperImg" mode='widthFix' bindload="imageLoad"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </block>
+  <block wx:else>
+    <image src="../../images/swiperNoImage.png" mode='widthFix'></image>
+  </block>
+
+  <view class="roomDetailContainer">
+    <view class="title">{{roomDetail.Title}}</view>
+    <view class="leibie">
+      <view class="objectStatusName" wx:if="{{roomDetail.ObjectStatusName}}">{{roomDetail.ObjectStatusName}}</view>
+      <view class="liveTypeName" wx:if="{{roomDetail.LiveTypeName}}">{{roomDetail.LiveTypeName}}</view>
+      <view class="isNew" wx:if="{{roomDetail.IsNew}}">{{roomDetail.IsNew}}</view>
+    </view>
+    <view class="Calculator">
+      <view class="roomCont1">
+        <image src="../../images/Calculator.png" mode="widthFix" /> 税费计算器
+      </view>
+    </view>
+    <view class="roomCont2">
+      <view class="shoujia">
+        <view>售价</view>
+        <view>{{roomDetail.OrderAmount}}万元</view>
+      </view>
+      <view class="hushi">
+        <view>户室</view>
+        <view>{{roomDetail.Room}}室{{roomDetail.Sitting_Room}}厅{{roomDetail.Bathroom}}卫</view>
+      </view>
+      <view class="mianji">
+        <view>面积</view>
+        <view>{{roomDetail.BuildingArea}}㎡</view>
+      </view>
+    </view>
+    <view class="roomCont3">
+      <view class="line1">
+        <text>名称:</text>{{roomDetail.CaseName}}</view>
+      <view class="line2">
+        <text>物件编号:</text>{{roomDetail.OrderNo}}</view>
+      <view class="line3">
+        <text>地址:</text>{{roomDetail.Address}}</view>
+      <view class="line4">
+        <text>单价:</text>{{roomDetail.AgentPriceDay}}万元/㎡</view>
+      <view class="line5">
+        <text>类别:</text>{{roomDetail.HousingType}}</view>
+      <view class="line6">
+        <text>楼层:</text>{{roomDetail.Floor}}/{{roomDetail.TotalFloor}}</view>
+      <view class="line7">
+        <text>建筑:</text>{{}}</view>
+      <view class="line8">
+        <text>精装:</text>{{roomDetail.RoomStatus}}</view>
+      <view class="line9">
+        <text>朝向:</text>{{roomDetail.MasterRoom_Orientation}}(主卧) {{roomDetail.SittingRoom_Orientation}}(客厅)</view>
+      <view class="line10">
+        <text>开发人:</text>{{roomDetail.RealName1}}</view>
+      <view class="line11">
+        <text>开发人:</text>{{}}</view>
+    </view>
+    <view class="roomDescription">
+      <view class="l1">
+        <view class="l1-1"></view>房源描述</view>
+      <view class="l2">卖点</view>
+      <view class="l3">{{roomDetail.BuyAdvantage}}</view>
+      <view class="l4">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <view class="bottomFix">
+    <view class="btmBox1">
+    <image src='../../images/tie.png' mode='widthFix'></image>
+      {{roomDetail.RealName1}}
+    </view>
+    <view class="btmBox2">
+      <view class="call" bindtap='makePhoneCall'>拨打电话</view>
+    </view>
+      
+    </view>
+  </view>
+</view>
